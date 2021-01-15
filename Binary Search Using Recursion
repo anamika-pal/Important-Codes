@@ -1,0 +1,32 @@
+
+#include <iostream>
+
+using namespace std;
+
+void binarysearch(int ar[],int first,int last,int num)
+{
+  int mid;
+  mid=(first+last)/2;
+  if(ar[mid]==num){ cout<<"Element found at index"<<mid; }
+  if(ar[mid]<num){
+      binarysearch(ar,mid,last,num);
+      }
+  else if(ar[mid]>num){binarysearch(ar,first,mid,num);}
+  return;
+}
+
+int main()
+{
+    int n,ar[50],item,start=1;
+    cout<<"Enter n ";
+    cin>>n;
+    cout<<"\nEnter array";
+    for(int i=1;i<=n;i++)
+    {
+        cin>> ar[i];
+    }
+    cout<<"Enter the item";
+    cin>>item;
+    binarysearch(ar,start,n,item);
+    return 0;
+}
